@@ -1,33 +1,40 @@
-function convertHpTo(value, unit) {
-    if (unit === 'cm') {
-        return value * 0.508; // Example conversion logic
-    } else if (unit === 'mm') {
-        return value * 5.08; // Example conversion logic
-    } else {
-        console.error('Invalid unit provided');
-        return null;
+/**
+ * Converts HP (Horizontal Pitch) to the specified metric unit.
+ * 
+ * @param {number} value - The number to be converted.
+ * @returns {number} - The converted value in the specified unit, with two decimal places.
+ */
+
+const hpToMmRatio = 5.08;
+
+function validInputValue(value) {
+    if (typeof value !== 'number') {
+        console.error('Invalid input value. Please provide a number.');
+        return false;
     }
+    return true;
+}
+
+function twoDecimalNumber(value) {
+    return Number(value.toFixed(2));
 }
 
 function convertHpToMm(value) {
-    return value * 5; // Example conversion logic
+    if (!validInputValue(value)) {
+        return null;
+    }
+    return twoDecimalNumber(value * hpToMmRatio); // Example conversion logic
 }
 
 function convertMmToHp(value) {
-    return value / 5; // Example conversion logic
+    if (!validInputValue(value)) {
+        return null;
+    }
+    return twoDecimalNumber(value / hpToMmRatio); // Example conversion logic
 }
 
-function roundUpHpToCm(value) {
-    return Math.ceil(value * 0.5); // Example conversion logic
-}
-
-// Usage
-let cm = convertHpTo(5, 'cm');
-let mm = convertHpToMm(68);
-let hp = convertMmToHp(400);
-let roundedUpCm = roundUpHpToCm(68);
-
-console.log(cm); // Output will depend on the conversion logic
-console.log(mm); // Output will depend on the conversion logic
-console.log(hp); // Output will depend on the conversion logic
-console.log(roundedUpCm); // Output will depend on the conversion logic
+// Exporting the functions to be used in other files
+module.exports = {
+    convertHpToMm,
+    convertMmToHp
+};

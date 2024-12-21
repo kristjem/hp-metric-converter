@@ -1,6 +1,6 @@
 # HP - metric converter
 
-### This module helps you convert HP to or from cm, or other metric measurments. 
+### This module helps you convert HP to or from mm
 
 HP is Short for *Horizontal Pitch*. In the Eurorack format for synthesizer modules, the width of a module is defined as the number of hp (horizontal pitch) units. Each hp is 0.2” (5.08 mm). Most modules are even numbers of hp wide, although some are odd numbers
 <br><br>
@@ -21,20 +21,19 @@ const eurorack = require('hp-metric-converter');
 ```
 
 #### HP to metric
-**`let metric = eurorack.convertHpTo(value, unit)`**<br>
+**`let metric = eurorack.convertHpToMm(value)`**<br>
 
 Example:
 ```
-let cm = eurorack.convertHpTo(68, 'cm')
-let mm = eurorack.convertHpTo(5, 'mm')
+let mm = eurorack.convertHpToMm(5)
 ```
 
 #### Metric to HP
-**`let hp = eurorack.convertMetricToHP(value, unit)`**<br>
+**`let hp = eurorack.convertMmToHp(value)`**<br>
 
 Example:
 ```
-let hp = eurorack.convertMetricToHP(400, 'mm')
+let hp = eurorack.convertMmToHp(400)
 ```
 
 ## Test
