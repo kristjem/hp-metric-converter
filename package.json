@@ -1,7 +1,7 @@
 {
   "name": "hp-metric-converter",
   "version": "1.0.0",
-  "description": "Convert HP (Horizontal Pitch) to or from cm, or other metric measurments. Eurorack uses HP as unit of measurement.",
+  "description": "Convert HP (Horizontal Pitch) to or from mm. Eurorack uses HP as unit of measurement.",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
